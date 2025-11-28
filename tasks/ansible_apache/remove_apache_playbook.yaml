@@ -1,0 +1,13 @@
+
+---
+- name: REMOVE_APACHE
+  hosts: webservers
+  gather_facts: yes
+  become: yes
+
+  tasks:
+    - name: Remove Apache2
+      apt:
+        name: apache2
+        state: absent
+        autoremove: yes
